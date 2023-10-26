@@ -292,6 +292,51 @@ describe('Function "orderByYear"', () => {
 
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
+describe('Function "moviesAverageByCategory"', () => {
+  it('should be declared', () => {
+    expect(typeof moviesAverageByCategory).toBe('function');
+  });
+  it('should return a number', () => {
+    expect(typeof moviesAverageByCategory(movies, 'Drama')).toBe('number');
+  });
+  it('should be different from NaN', () => {
+    expect(typeof moviesAverageByCategory(movies, 'Crime')).not.toBeNaN();
+  });
+  it('should return the average score of the movies of the indicated genre', () => {
+    expect(moviesAverageByCategory([{
+      title: 'Fight Club',
+      year: 1999,
+      director: 'David Fincher',
+      duration: '2h 19min',
+      genre: ['Drama'],
+      score: 8.8
+    },
+    {
+      title: 'The Lord of the Rings: The Fellowship of the Ring',
+      year: 2001,
+      director: 'Peter Jackson',
+      duration: '2h 58min',
+      genre: ['Adventure', 'Drama', 'Fantasy'],
+      score: 8.8
+    },
+    {
+      title: 'Forrest Gump',
+      year: 1994,
+      director: 'Robert Zemeckis',
+      duration: '2h 22min',
+      genre: ['Comedy', 'Drama', 'Romance'],
+      score: 8.8
+    },
+    {
+      title: 'Star Wars: Episode V - The Empire Strikes Back',
+      year: 1980,
+      director: 'Irvin Kershner',
+      duration: '2h 4min',
+      genre: ['Action', 'Adventure', 'Fantasy', 'Sci-Fi'],
+      score: 8.8
+    }], "Fantasy")).toBe(8.8,);
+  })
+});
 
 
 // Exercise 7
